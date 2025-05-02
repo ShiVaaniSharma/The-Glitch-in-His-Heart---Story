@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glitch in His Heart</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>The Glitch in His Heart</h1>
+        <p class="subtitle">A short tale about logic, obsession, and finding beauty in broken code.</p>
+        <i class="fas fa-chevron-down scroll-indicator"></i>
+    </header>
+
+    <main>
+        <section id="intro" class="content-section fade-in">
+            <p>In the ordered world of software development, logic reigns supreme. Lines of code are soldiers, commands are precise, and bugs are the enemy... usually.</p>
+            <p>Meet Alex, a developer whose meticulous world was about to get delightfully glitchy.</p>
+        </section>
+
+        <section id="alex" class="content-section fade-in">
+            <h2><i class="fas fa-user-cog icon"></i> const Developer = { name: "Alex", trait: "Meticulous" };</h2>
+            <p>Alex crafted code like a poet wrote sonnets. Every function was elegant, every variable named with purpose. His digital domain was pristine, predictable.</p>
+            <p>He despised chaos. Bugs were errors to be squashed, imperfections to be eradicated. Until <em>it</em> arrived.</p>
+        </section>
+
+        <section id="flicker-arrival" class="content-section fade-in">
+             <h2><i class="fas fa-bug icon"></i> Bug.init({ id: 734, name: "Flicker" });</h2>
+             <p>Flicker wasn't loud or destructive. It was a ghost in the machine – a subtle shimmer on the dashboard, visible only in the dead of night, under bizarrely specific conditions.</p>
+
+             <div class="bug-report fade-in">
+                 <h3>Bug Report #734</h3>
+                 <p><strong>Status:</strong> Infuriatingly Persistent</p>
+                 <p><strong>Symptom:</strong> Subtle dashboard shimmer.</p>
+                 <p><strong>Trigger:</strong> 3:00-3:03 AM && userName.includes('Q')</p>
+                 <p><strong>Nickname:</strong> Flicker ✨</p>
+             </div>
+
+            <p>It defied easy explanation. It mocked Alex's breakpoints. It was… intriguing.</p>
+        </section>
+
+        <section id="obsession" class="content-section fade-in">
+            <h2><i class="fas fa-search icon"></i> while (!found) { debug(flicker); }</h2>
+
+            <blockquote class="pull-quote fade-in">
+                "It danced around his logic, vanishing just as he thought he'd cornered it."
+            </blockquote>
+
+            <p>Days bled into weeks. Alex hunted Flicker relentlessly. Logs were scoured, <i class="fas fa-pizza-slice"></i> pizza boxes piled up. Colleagues suggested drastic measures – "Nuke it from orbit!" – but Alex couldn't.</p>
+            <p>He started anticipating Flicker's 3:00 AM appearance. He found himself talking to the screen: "Hiding in the async call again, Flicker? Clever girl." <i class="fas fa-moon"></i></p>
+        </section>
+
+        <section id="confrontation" class="content-section fade-in">
+            <h2><i class="fas fa-code-branch icon"></i> if (deleteBug) { ... } else { <i class="fas fa-heart heart-icon"></i> }</h2>
+            <p>Then, one caffeine-fueled <i class="fas fa-mug-hot"></i> night, he found it. The single, rogue line:</p>
+
+            <pre class="code-block fade-in"><code>// somewhere in rendering.js
+if (user.name.includes('Q') && isLateNight()) {
+  // !! TEMPORARY HACK for alignment issue ?? REMOVE LATER !!
+  element.style.opacity = Math.random() > 0.5 ? '0.99' : '1'; // <-- Flicker lived here
+}</code></pre>
+
+            <p>His cursor hovered over 'Delete'. Freedom. Order. An end to the madness.</p>
+            <p>But the code felt… empty without Flicker's chaotic signature. Lifeless. Boring.</p>
+            <p>He hesitated.</p>
+        </section>
+
+        <section id="resolution" class="content-section fade-in">
+             <h2><i class="fas fa-comment-dots icon"></i> // TODO: Never Fix This</h2>
+
+             <blockquote class="pull-quote fade-in">
+                 "It wasn’t just a bug; it was <em>his</em> bug. A unique, inexplicable quirk... beautiful, in its own broken way."
+             </blockquote>
+
+            <p>He closed the file. No deletion. No fix.</p>
+             <p>He added a private comment only he would ever see:</p>
+
+            <pre class="code-block final-comment fade-in"><code>// Known issue #734 "Flicker".
+// Do not fix. Adds character. - A.
+// element.style.opacity = Math.random() > 0.5 ? '0.99' : '1'; // Preserved for posterity</code></pre>
+
+            <p>A faint smile touched his lips. Maybe perfect code wasn't the goal. Maybe the real beauty was in the unexpected glitches, the deviations you learn to love.</p>
+        </section>
+
+        <section id="conclusion" class="content-section fade-in">
+             <p>Flicker remained, an undocumented feature, a secret shimmer in the machine. A reminder that sometimes, the most interesting connections are the ones you never expected, found not despite the errors, but because of them. <i class="fas fa-heart heart-icon"></i></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year"></span> Your shiVani/The Glitch in His Heart Here. A fictional tale.</p>
+    </footer>
+
+    <!-- <script src="script.js"></script> -->
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+// --- Intersection Observer for Fade-in Effect ---
+const fadeElems = document.querySelectorAll('.fade-in');
+
+const observerOptions = {
+    root: null, // relative to the viewport
+    rootMargin: '0px',
+    threshold: 0.1 // Trigger when 10% of the element is visible
+};
+
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Stop observing once visible
+        }
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+fadeElems.forEach(elem => {
+    observer.observe(elem);
+});
+
+// --- Optional: Smooth scroll for internal links if needed ---
+// Example: If you add links like <a href="#alex">...</a>
+/*
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+*/
+
+
+
+
+// --- End Fade-in ---
+
+
+// --- Dynamically set the year in the footer ---
+const yearSpan = document.getElementById('copyright-year');
+if (yearSpan) { // Good practice: check if the element was found
+    const targetYear = 2025; // Set the specific year requested
+    // For the *actual current* year, you would use:
+    // const currentYear = new Date().getFullYear();
+    yearSpan.textContent = targetYear; // Use targetYear or currentYear here
+}
+// --- End dynamic year ---
+
+}); // This closing }); should already be there from the DOMContentLoaded listener
+
+     </script>
+</body>
+</html>
