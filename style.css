@@ -22,7 +22,7 @@ body {
     background-color: var(--background-color);
     color: var(--primary-text);
     line-height: 1.7;
-    font-size: 16px; /* Base font size */
+    font-size: 16px; 
 }
 
 main {
@@ -32,7 +32,7 @@ main {
 }
 
 header.hero {
-    min-height: 70vh; /* Adjust as needed */
+    min-height: 70vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,25 +154,25 @@ pre.code-block {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     padding: 20px;
-    overflow-x: auto; /* Handle long lines */
+    overflow-x: auto; 
     margin: 1.5rem 0;
     font-family: 'Roboto Mono', monospace;
     font-size: 0.9rem;
     line-height: 1.6;
-    white-space: pre-wrap; /* Wrap long lines */
+    white-space: pre-wrap;
     word-wrap: break-word;
 }
 
 pre.code-block code {
-    display: block; /* Ensure code block takes full width */
+    display: block; 
 }
 
 pre.final-comment {
-    border-left: 5px solid #50fa7b; /* Greenish border for the final comment */
+    border-left: 5px solid #50fa7b; 
 }
 
 pre.final-comment code {
-    color: #bd93f9; /* Purple-ish comment color */
+    color: #bd93f9; 
 }
 
 .icon {
